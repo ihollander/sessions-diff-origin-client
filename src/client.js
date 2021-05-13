@@ -35,11 +35,11 @@ async function request(endpoint, options = {}) {
 }
 
 function autologin() {
-  return request("/me");
+  return request("/api/me");
 }
 
 function login(formData) {
-  return request("/login", {
+  return request("/api/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -49,7 +49,7 @@ function login(formData) {
 }
 
 function signup(formData) {
-  return request("/signup", {
+  return request("/api/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -59,13 +59,13 @@ function signup(formData) {
 }
 
 function logout() {
-  return request("/logout", {
+  return request("/api/logout", {
     method: "DELETE",
   });
 }
 
 function updateUser(formData) {
-  return request("/me", {
+  return request("/api/me", {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
